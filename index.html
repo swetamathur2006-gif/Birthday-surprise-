@@ -2,652 +2,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Love ❤️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love ❤️</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --pink: #f6a8c5;
-  --darkpink: #a94370;
-  --cream: #fff8f5;
-  --ink: #65384e;
-}
+  <style>
+    * { box-sizing: border-box; }
 
-* { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      color: #793b59;
+      background: linear-gradient(135deg, #fff0f5, #ffe0eb, #fff7fa);
+      text-align: center;
+    }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Nunito', sans-serif;
-  color: var(--ink);
-  background: linear-gradient(145deg, #fff0f5, #ffe5ec, #fff8f0);
-  overflow-x: hidden;
-}
+    .slide {
+      display: none;
+      position: relative;
+      min-height: 100vh;
+      padding: 30px 15px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
 
-button {
-  font-family: 'Nunito', sans-serif;
-  cursor: pointer;
-}
+    .slide.active { display: flex; }
 
-h1, h2, .script {
-  font-family: 'Dancing Script', cursive;
-}
+    .content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 650px;
+      padding: 25px 20px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 25px;
+      background: rgba(255,248,251,.88);
+      box-shadow: 0 10px 35px rgba(191,91,133,.16);
+      backdrop-filter: blur(4px);
+    }
 
-h1 {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  margin: 10px 0;
-}
+    h1, h2 {
+      font-family: 'Dancing Script', cursive;
+      color: #c04f82;
+    }
 
-h2 {
-  font-size: clamp(2rem, 6vw, 3rem);
-  margin: 10px 0;
-}
+    h1 { font-size: clamp(40px, 9vw, 64px); }
+    h2 { font-size: clamp(32px, 7vw, 45px); }
 
-p {
-  line-height: 1.85;
-}
+    p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
 
-.screen {
-  display: none;
-  min-height: 100vh;
-  padding: 28px 16px 45px;
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn .7s ease;
-}
+    button {
+      border: none;
+      border-radius: 30px;
+      padding: 13px 22px;
+      margin: 8px;
+      background: linear-gradient(135deg, #e783ad, #c95d91);
+      color: white;
+      font-size: 15px;
+      font-family: 'Nunito', sans-serif;
+      cursor: pointer;
+      box-shadow: 0 5px 15px #d88bad55;
+    }
 
-.screen.active { display: flex; }
+    button:hover { transform: translateY(-2px); }
 
-.content {
-  width: 100%;
-  max-width: 700px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
+    .photo-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .20;
+      z-index: 0;
+    }
 
-.card {
-  background: rgba(255, 255, 255, .78);
-  border: 1px solid rgba(255,255,255,.9);
-  border-radius: 28px;
-  padding: clamp(20px, 5vw, 38px);
-  box-shadow: 0 15px 45px rgba(172, 74, 112, .12);
-  backdrop-filter: blur(5px);
-}
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 20px auto;
+      max-width: 430px;
+    }
 
-.script {
-  color: var(--darkpink);
-}
+    .photo-grid img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 17px;
+      border: 4px solid white;
+      box-shadow: 0 5px 15px #b86a8a25;
+    }
 
-.subtitle {
-  font-size: 1rem;
-  letter-spacing: 1px;
-}
+    .song-card {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0;
+      border: 1px solid #f2bfd4;
+      border-radius: 18px;
+      background: #fff7fb;
+      color: #9e426c;
+    }
 
-.btn {
-  border: none;
-  border-radius: 40px;
-  padding: 13px 24px;
-  margin: 8px 4px;
-  font-size: 1rem;
-  font-weight: 800;
-  color: white;
-  background: linear-gradient(120deg, #ef8fb5, #d96899);
-  box-shadow: 0 7px 18px rgba(191, 76, 126, .2);
-  transition: transform .2s;
-}
+    .song-card p {
+      margin: 4px 0;
+      font-weight: 700;
+    }
 
-.btn:hover { transform: translateY(-2px); }
+    .song-player {
+      width: 100%;
+      margin-top: 10px;
+    }
 
-.btn.secondary {
-  background: #fff;
-  color: var(--darkpink);
-  border: 1px solid #f2b4cc;
-  box-shadow: none;
-}
+    .song-player iframe {
+      width: 100%;
+      max-width: 400px;
+      height: 225px;
+      border: 0;
+      border-radius: 15px;
+    }
 
-.gift {
-  font-size: clamp(6rem, 22vw, 10rem);
-  display: inline-block;
-  animation: giftFloat 2s ease-in-out infinite;
-  filter: drop-shadow(0 10px 10px rgba(173, 66, 113, .12));
-}
+    .shayari {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(22px, 5vw, 30px);
+      line-height: 1.8;
+      color: #a74370;
+    }
 
-.small {
-  font-size: .88rem;
-  opacity: .8;
-}
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      color: #e98bb2;
+      opacity: .55;
+      animation: floatUp 9s linear forwards;
+      pointer-events: none;
+      z-index: 1;
+    }
 
-.heart {
-  position: fixed;
-  bottom: -40px;
-  z-index: 0;
-  pointer-events: none;
-  opacity: .55;
-  animation: rise 9s linear infinite;
-}
+    @keyframes floatUp {
+      from { transform: translateY(0) rotate(0); }
+      to { transform: translateY(-110vh) rotate(25deg); }
+    }
 
-.pop-title {
-  animation: popIn .8s cubic-bezier(.2,1.6,.4,1);
-}
-
-.birthday-text {
-  color: #d54f89;
-  text-shadow: 0 0 20px rgba(255, 152, 192, .55);
-  animation: birthdayGlow 1.5s ease-in-out infinite alternate;
-}
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin: 24px 0;
-}
-
-.photo-slot {
-  position: relative;
-  min-height: 180px;
-  aspect-ratio: 4 / 5;
-  border: 5px solid white;
-  border-radius: 18px;
-  overflow: hidden;
-  background: linear-gradient(145deg, #ffd7e6, #fff4ec);
-  box-shadow: 0 7px 20px rgba(164, 66, 109, .12);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.photo-slot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  inset: 0;
-}
-
-.photo-placeholder {
-  padding: 12px;
-  font-size: .9rem;
-  color: #a94370;
-}
-
-.photo-slot.has-photo .photo-placeholder {
-  display: none;
-}
-
-.wishes-background {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-
-.wishes-background::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image: url("photos/us-background.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: .30;
-  transform: scale(1.02);
-}
-
-.wishes-background::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: rgba(255, 245, 249, .76);
-}
-
-.message {
-  white-space: normal;
-  text-align: left;
-  font-size: 1rem;
-}
-
-.message p { margin: 13px 0; }
-
-.bear-row {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  align-items: center;
-  font-size: clamp(2.5rem, 10vw, 4.5rem);
-  margin: 18px 0;
-}
-
-.cake {
-  font-size: 4rem;
-  animation: giftFloat 2s ease-in-out infinite;
-}
-
-.music-status {
-  min-height: 25px;
-  color: var(--darkpink);
-  font-size: .9rem;
-}
-
-.progress {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin: 20px 0;
-}
-
-.progress span {
-  height: 6px;
-  width: 17px;
-  border-radius: 20px;
-  background: #edc6d5;
-}
-
-.progress span.on { background: #d96899; }
-
-.shayari {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(1.3rem, 4.5vw, 1.8rem);
-  line-height: 1.8;
-  color: #994165;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 9px;
-  margin: 22px 0;
-  flex-wrap: wrap;
-}
-
-.count-box {
-  min-width: 64px;
-  padding: 10px 8px;
-  border-radius: 15px;
-  background: rgba(255,255,255,.8);
-  box-shadow: 0 5px 15px rgba(173,66,113,.08);
-}
-
-.count-box strong {
-  display: block;
-  font-size: 1.35rem;
-  color: #bd4f80;
-}
-
-.count-box span { font-size: .72rem; }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes giftFloat {
-  0%, 100% { transform: translateY(0) rotate(-2deg); }
-  50% { transform: translateY(-9px) rotate(2deg); }
-}
-
-@keyframes rise {
-  from { transform: translateY(0) rotate(0deg); opacity: .6; }
-  to { transform: translateY(-115vh) rotate(30deg); opacity: 0; }
-}
-
-@keyframes popIn {
-  from { opacity: 0; transform: scale(.6); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes birthdayGlow {
-  from { text-shadow: 0 0 5px #ffd2e4; }
-  to { text-shadow: 0 0 22px #ff9bc5; }
-}
-
-@media (max-width: 420px) {
-  .screen { padding: 20px 12px 32px; }
-  .photo-slot { min-height: 140px; }
-  .card { border-radius: 22px; }
-}
-</style>
+    @media (max-width: 420px) {
+      .photo-grid img { height: 145px; }
+      .content { padding: 20px 14px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- Floating hearts -->
-<div id="hearts"></div>
-
-<!-- Add your audio files later in the songs folder -->
-<audio id="music" preload="none"></audio>
-
-<!-- SCREEN 1: GIFT COVER -->
-<section class="screen active" id="screen1">
-  <div class="content card">
-    <div class="gift">🎁</div>
-    <p class="subtitle">A little surprise, made with love</p>
-    <h1 class="script">For MY LOVE ❤️</h1>
-    <h2 class="script">My Nitya Didi 🤭</h2>
-    <p class="script" style="font-size:1.8rem">
-      Open with a smile, my love 😊
-    </p>
-    <p>Something special is waiting for you...</p>
-    <button class="btn" onclick="showScreen(2)">
-      Open Your Surprise 💌
-    </button>
-    <p class="small">Made with love, just for you ❤️</p>
-  </div>
-</section>
-
-<!-- SCREEN 2: HIS PHOTOS + BIRTHDAY SONG -->
-<section class="screen" id="screen2">
-  <div class="content card">
-    <p class="subtitle">Today is all about YOU ✨</p>
-    <h1 class="birthday-text pop-title">Happy Birthday!</h1>
-    <h2 class="script">My Love ❤️</h2>
-
-    <div class="photo-grid">
-      <div class="photo-slot">
-        <span class="photo-placeholder">His photo 1 📸</span>
-        <img src="photos/his1.jpg" alt="His photo 1"
-             onload="this.parentElement.classList.add('has-photo')"
-             onerror="this.style.display='none'">
-      </div>
-      <div class="photo-slot">
-        <span class="photo-placeholder">His photo 2 💗</span>
-        <img src="photos/his2.jpg" alt="His photo 2"
-             onload="this.parentElement.classList.add('has-photo')"
-             onerror="this.style.display='none'">
-      </div>
-      <div class="photo-slot">
-        <span class="photo-placeholder">His photo 3 🌸</span>
-        <img src="photos/his3.jpg" alt="His photo 3"
-             onload="this.parentElement.classList.add('has-photo')"
-             onerror="this.style.display='none'">
-      </div>
-      <div class="photo-slot">
-        <span class="photo-placeholder">His photo 4 🫶</span>
-        <img src="photos/his4.jpg" alt="His photo 4"
-             onload="this.parentElement.classList.add('has-photo')"
-             onerror="this.style.display='none'">
-      </div>
+  <!-- SLIDE 1: SURPRISE -->
+  <section class="slide active" id="slide1">
+    <div class="content">
+      <div style="font-size:55px">🎁💗🎀</div>
+      <h1>For MY LOVE ❤️</h1>
+      <p>My Nitya Didi 🤭</p>
+      <p>A little surprise, made with lots of love, just for you. 💌</p>
+      <button onclick="nextSlide(2)">Open Your Surprise 🎁</button>
     </div>
+  </section>
 
-    <h2 class="script birthday-text">Happiest Birthday, My Love! 🎂</h2>
-    <p class="script" style="font-size:1.5rem">
-      Today, the world celebrates you 💖
-    </p>
-    <button class="btn" onclick="playSong('happy-birthday.mp3')">
-      ▶ Tap to Listen 🎶
-    </button>
-    <p class="music-status" id="musicStatus">Your birthday song is waiting 🎵</p>
-    <button class="btn secondary" onclick="showScreen(3)">Next surprise 💗</button>
-  </div>
-</section>
+  <!-- SLIDE 2: BIRTHDAY -->
+  <section class="slide" id="slide2">
+    <img class="photo-bg" src="photos/his1.jpg" alt="">
+    <div class="content">
+      <h1>Happy Birthday, My Love! 🎂</h1>
+      <p>Today is all about you. You deserve happiness, peace, success and all the beautiful things life has to offer. ❤️</p>
 
-<!-- SCREEN 3: WISHES + CUTE BEARS + TUM SE HI -->
-<section class="screen" id="screen3">
-  <div class="content card wishes-background">
-    <p class="subtitle">A few wishes from my heart 💌</p>
-    <h1 class="script">For you, my favourite person</h1>
+      <div class="photo-grid">
+        <img src="photos/his1.jpg" alt="Birthday memory">
+        <img src="photos/his2.jpg" alt="Birthday memory">
+      </div>
 
-    <div class="bear-row">
-      <span>🐻‍❄️💗</span><span>🧸🎂</span>
+      <div class="song-card">
+        <p>🎂 Happy bday to u ji ❤️</p>
+        <button onclick="playSong('K2aJTT29ZdU', this, 15, 40)">
+          🎶 Tap to Listen
+        </button>
+        <div class="song-player"></div>
+      </div>
+
+      <button onclick="nextSlide(3)">Next Surprise 💗</button>
     </div>
-    <div class="cake">🎂</div>
+  </section>
 
-    <div class="message">
-      <p>Happiest birthday, my love of my life. ❤️</p>
-      <p>You are so special to me. I am truly grateful that I have you in my life.</p>
-      <p>I pray to God that you get everything you wish for, every happiness your heart deserves, and success in every moment of your life. 🤍</p>
-      <p>Maine aapke jaisa kabhi koi nahi dekha. Shayad aap jaisa koi hai bhi nahi. 🥹</p>
-      <p>I really appreciate you, my hardworking man. I am really happy with you. ❤️</p>
+  <!-- SLIDE 3: WISHES -->
+  <section class="slide" id="slide3">
+    <img class="photo-bg" src="photos/his3.jpg" alt="">
+    <div class="content">
+      <h2>My Wishes for You 🌷</h2>
+      <p>I really pray that God gives you everything you wish for, every single moment of your life. ❤️</p>
+      <p>May your hard work bring you success, may your heart always find peace, and may you always have reasons to smile. 🧿</p>
+      <p>You are so special to me, and I am truly grateful to have you in my life. 💗</p>
+
+      <div class="song-card">
+        <p>💗 Nazm Nazm</p>
+        <button onclick="playSong('vyJTAnlRHVc', this, 156, 217)">
+          🎶 Tap to Listen
+        </button>
+        <div class="song-player"></div>
+      </div>
+
+      <button onclick="nextSlide(4)">One More Thing 💌</button>
     </div>
+  </section>
 
-    <button class="btn" onclick="playSong('tum-se-hi.mp3')">
-      ▶ Tum Se Hi 🎶
-    </button>
-    <p class="music-status" id="musicStatus3">A song for my favourite person 💗</p>
-    <button class="btn secondary" onclick="showScreen(4)">Read my heart 💌</button>
-  </div>
-</section>
-
-<!-- SCREEN 4: PERSONAL EMOTIONAL MESSAGE + CHANNA VE -->
-<section class="screen" id="screen4">
-  <div class="content card wishes-background">
-    <p class="subtitle">Some feelings are difficult to say aloud...</p>
-    <h1 class="script">From my heart to yours 💌</h1>
-
-    <div class="message">
-      <p>Happiest birthday, my love of my life. ❤️</p>
-      <p>Aap mere liye bahut special ho. I am genuinely grateful ki aap meri life mein ho. Main aapko khona nahi chahti; aap mere liye bahut maayne rakhte ho.</p>
-      <p>Aapki mehnat, aapka dil aur aapke sapne mere liye important hain. Main dil se pray karti hoon ki aapko woh sab mile jo aap chahte ho, aur aap hamesha khush raho.</p>
+  <!-- SLIDE 4: PERSONAL LETTER -->
+  <section class="slide" id="slide4">
+    <img class="photo-bg" src="photos/his4.jpg" alt="">
+    <div class="content">
+      <h2>A Little Letter for You 💌</h2>
+      <p>My Love, ❤️</p>
+      <p>You are truly so special to me. I am very grateful that I have you in my life. I pray that you always get the happiness, success and peace you deserve.</p>
       <p>Main aapko success hoke zaroor dikhaungi, kabhi niraash nahi karungi aapko. ❤️</p>
-      <p>I really appreciate you, my hardworking man. I am really happy with you.</p>
-      <p class="script" style="font-size:1.7rem;text-align:center">
-        You are, and will always be, so special to me. 🥹❤️
+      <p>I hope this new year of your life brings you closer to every dream you carry in your heart. Always keep believing in yourself. 🌷</p>
+
+      <div class="song-card">
+        <p>🥹 Tum Mile</p>
+        <button onclick="playSong('C0S0PMpNybM', this, 68, 100)">
+          🎶 Tap to Listen
+        </button>
+        <div class="song-player"></div>
+      </div>
+
+      <button onclick="nextSlide(5)">Our Memories 📸</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 5: COUPLE PHOTOS -->
+  <section class="slide" id="slide5">
+    <div class="content">
+      <h2>Our Little World 📸❤️</h2>
+      <p>Some memories are special simply because they have a place in our hearts. 💗</p>
+
+      <div class="photo-grid">
+        <img src="photos/us1.jpg" alt="Our memory">
+        <img src="photos/us2.jpg" alt="Our memory">
+        <img src="photos/us3.jpg" alt="Our memory">
+        <img src="photos/us4.jpg" alt="Our memory">
+      </div>
+
+      <div class="song-card">
+        <p>❤️ Tera Mera Hai Pyaar Amar ..... yup alwayss</p>
+        <button onclick="playSong('kM-IAHbLDnc', this, 75, 103)">
+          🎶 Tap to Listen
+        </button>
+        <div class="song-player"></div>
+      </div>
+
+      <button onclick="nextSlide(6)">Last Surprise 🧸</button>
+    </div>
+  </section>
+
+  <!-- SLIDE 6: FINAL MESSAGE -->
+  <section class="slide" id="slide6">
+    <div class="content">
+      <div style="font-size:50px">🧸💗🎂</div>
+      <h2>Happiest Birthday, My Love! ❤️</h2>
+      <p>Your birthday is my second birthday. 🥹💗</p>
+      <p>I pray that your life is filled with countless reasons to smile, beautiful opportunities and all the love your heart deserves.</p>
+
+      <div class="shayari">
+        Aap guzron toh hawaon mein asar rehta hai<br>
+        Aapke hone se dil ko sabr rehta hai<br>
+        yun to dekhe hai zamaane mein haseen chehre<br>
+        magar aap jaisa kahan koi dil ke qareeb rehta hai ...
+      </div>
+
+      <p style="font-family:'Dancing Script',cursive;font-size:28px">
+        From your Shivi ❤️
       </p>
+
+      <button onclick="restart()">Relive the Surprise 💞</button>
     </div>
+  </section>
 
-    <button class="btn" onclick="playSong('channa-ve.mp3')">
-      ▶ Channa Ve 🎶
-    </button>
-    <p class="music-status" id="musicStatus4">Just you, me and these feelings 💗</p>
-    <button class="btn secondary" onclick="showScreen(5)">Our memories 📸</button>
-  </div>
-</section>
+  <script>
+    function stopSongs() {
+      document.querySelectorAll('.song-player').forEach(player => {
+        player.innerHTML = '';
+      });
 
-<!-- SCREEN 5: OUR PHOTOS + TERA MERA HAI PYAR AMAR -->
-<section class="screen" id="screen5">
-  <div class="content card">
-    <p class="subtitle">A little collection of us 💗</p>
-    <h1 class="script">Our little world</h1>
-    <p>Some moments become memories; some people become home. ❤️</p>
+      document.querySelectorAll('.song-card button').forEach(button => {
+        button.textContent = '🎶 Tap to Listen';
+      });
+    }
 
-    <div class="photo-grid">
-      <div class="photo-slot">
-        <span class="photo-placeholder">Our photo 1 💕</span>
-        <img src="photos/us1.jpg" alt="Our photo 1"
-             onload="this.parentElement.classList.add('has-photo')"
-             onerror="this.style.display='none'">
-      </div>
-      <div class="photo-slot">
-        <span class="photo-placeholder">Our photo 2 🫶</span>
-        <img src="photos/us2.jpg" alt="Our photo 2"
-             onload="this.parentElement.classList.add('has-photo')"
-             onerror="this.style.display='none'">
-      </div>
-      <div class="photo-slot">
-        <span class="photo-placeholder">Our photo 3 🌷</span>
-        <img src="photos/us3.jpg" alt="Our photo 3"
-             onload="this.parentElement.classList.add('has-photo')"
-             onerror="this.style.display='none'">
-      </div>
-      <div class="photo-slot">
-        <span class="photo-placeholder">Our photo 4 ❤️</span>
-        <img src="photos/us4.jpg" alt="Our photo 4"
-             onload="this.parentElement.classList.add('has-photo')"
-             onerror="this.style.display='none'">
-      </div>
-    </div>
+    function nextSlide(number) {
+      stopSongs();
 
-    <button class="btn" onclick="playSong('tera-mera-hai-pyar-amar.mp3')">
-      ▶ Tera Mera Hai Pyar Amar 🎶
-    </button>
-    <p class="music-status" id="musicStatus5">Our memories, our song 💗</p>
-    <button class="btn secondary" onclick="showScreen(6)">One last thing... 💌</button>
-  </div>
-</section>
+      document.querySelectorAll('.slide').forEach(slide => {
+        slide.classList.remove('active');
+      });
 
-<!-- SCREEN 6: FINAL WISHES -->
-<section class="screen" id="screen6">
-  <div class="content card wishes-background">
-    <div class="bear-row">
-      <span>🧸💕</span><span>🐻‍❄️</span>
-    </div>
+      document.getElementById('slide' + number).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-    <h1 class="birthday-text pop-title">Happy Birthday, My Love! 🎂</h1>
+    function playSong(videoId, button, start, end) {
+      const player = button.parentElement.querySelector('.song-player');
 
-    <div class="cake">🎂</div>
+      if (player.innerHTML !== '') {
+        player.innerHTML = '';
+        button.textContent = '🎶 Tap to Listen';
+        return;
+      }
 
-    <h2 class="script">Your birthday is my second birthday. ❤️</h2>
+      stopSongs();
+      button.textContent = '⏸ Close Song';
 
-    <p>May life bring you beautiful reasons to smile, dreams that come true, and happiness that stays.</p>
-    <p class="script" style="font-size:1.7rem">
-      I will always pray for your happiness and success. 🤍
-    </p>
+      player.innerHTML = `
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/${videoId}?start=${start}&end=${end}&autoplay=1&rel=0"
+          title="Birthday song clip"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+        <p style="font-size:12px">
+          Enjoy this little song moment ❤️ If playback does not start, press Play.
+        </p>
+      `;
+    }
 
-    <div class="bear-row">
-      <span>🐻‍❄️🎁</span><span>🧸💗</span><span>🎂</span>
-    </div>
+    function restart() {
+      nextSlide(1);
+    }
 
-    <p class="shayari">
-      Aap guzron toh hawaon mein asar rehta hai<br>
-      Aapke hone se dil ko sabr rehta hai<br>
-      yun to dekhe hai zamaane mein haseen chehre<br>
-      magar aap jaisa kahan koi dil ke qareeb rehta hai ...
-    </p>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.textContent = ['♡', '♥', '💗', '💕'][
+        Math.floor(Math.random() * 4)
+      ];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (14 + Math.random() * 18) + 'px';
+      heart.style.animationDuration = (6 + Math.random() * 6) + 's';
 
-    <h2 class="script">From your Shivi ❤️</h2>
-    <p>With all my love, today and always. 💌</p>
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 12000);
+    }
 
-    <button class="btn" onclick="playSong('happy-birthday.mp3')">
-      ▶ One more Happy Birthday 🎶
-    </button>
-    <p class="music-status" id="musicStatus6"></p>
-    <button class="btn secondary" onclick="showScreen(1)">Open again 🎁</button>
-  </div>
-</section>
-
-<script>
-const music = document.getElementById('music');
-let currentSong = '';
-
-function showScreen(number) {
-  document.querySelectorAll('.screen').forEach(screen => {
-    screen.classList.remove('active');
-  });
-
-  document.getElementById('screen' + number).classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  // Stop the previous song when changing slides.
-  music.pause();
-  music.currentTime = 0;
-  currentSong = '';
-
-  document.querySelectorAll('.music-status').forEach(status => {
-    status.textContent = '';
-  });
-}
-
-function playSong(filename) {
-  const statusMap = {
-    'happy-birthday.mp3': ['musicStatus', 'musicStatus6'],
-    'tum-se-hi.mp3': ['musicStatus3'],
-    'channa-ve.mp3': ['musicStatus4'],
-    'tera-mera-hai-pyar-amar.mp3': ['musicStatus5']
-  };
-
-  if (currentSong === filename && !music.paused) {
-    music.pause();
-    const statuses = statusMap[filename] || [];
-    statuses.forEach(id => {
-      document.getElementById(id).textContent = 'Music paused ⏸️';
-    });
-    return;
-  }
-
-  music.pause();
-  music.src = 'songs/' + filename;
-  music.load();
-  currentSong = filename;
-
-  const statuses = statusMap[filename] || [];
-  statuses.forEach(id => {
-    document.getElementById(id).textContent = 'Loading your song... 🎶';
-  });
-
-  music.play().then(() => {
-    statuses.forEach(id => {
-      document.getElementById(id).textContent = 'Now playing for you ❤️';
-    });
-  }).catch(() => {
-    statuses.forEach(id => {
-      document.getElementById(id).textContent =
-        'Song file abhi add karni hai — we will add it later 💗';
-    });
-  });
-
-  music.onended = () => {
-    statuses.forEach(id => {
-      document.getElementById(id).textContent = 'A song just for you ❤️';
-    });
-  };
-}
-
-// Floating hearts
-const heartBox = document.getElementById('hearts');
-const heartSymbols = ['♡', '♥', '💕', '💗'];
-
-for (let i = 0; i < 16; i++) {
-  const heart = document.createElement('span');
-  heart.className = 'heart';
-  heart.textContent = heartSymbols[i % heartSymbols.length];
-  heart.style.left = (Math.random() * 100) + '%';
-  heart.style.animationDelay = (Math.random() * 8) + 's';
-  heart.style.animationDuration = (7 + Math.random() * 6) + 's';
-  heart.style.fontSize = (14 + Math.random() * 20) + 'px';
-  heartBox.appendChild(heart);
-}
-</script>
-
-<!-- Our Special Songs -->
-<section style="padding: 30px 15px; text-align: center; background: linear-gradient(135deg, #ffe4ec, #fff0f5); border-radius: 20px; margin: 20px 0; color: #8b3a62;">
-  <h2 style="font-family: cursive; font-size: 30px;">🎶 Our Special Songs 🎀</h2>
-  <p>Every song reminds me of you, my love ❤️</p>
-
-  <div style="background: white; padding: 15px; margin: 18px auto; border-radius: 16px; max-width: 500px;">
-    <h3>🎂 Happy Birthday</h3>
-    <iframe width="100%" height="200"
-      src="https://www.youtube-nocookie.com/embed/K2aJTT29ZdU"
-      title="Happy Birthday song" frameborder="0"
-      allow="encrypted-media; picture-in-picture"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen></iframe>
-  </div>
-
-  <div style="background: white; padding: 15px; margin: 18px auto; border-radius: 16px; max-width: 500px;">
-    <h3>💗 Tum Se Hi</h3>
-    <iframe width="100%" height="200"
-      src="https://www.youtube-nocookie.com/embed/Cb6wuzOurPc"
-      title="Tum Se Hi" frameborder="0"
-      allow="encrypted-media; picture-in-picture"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen></iframe>
-  </div>
-
-  <div style="background: white; padding: 15px; margin: 18px auto; border-radius: 16px; max-width: 500px;">
-    <h3>🥹 Channa Ve</h3>
-    <iframe width="100%" height="200"
-      src="https://www.youtube-nocookie.com/embed/_fcdiTsdvGc"
-      title="Channa Ve" frameborder="0"
-      allow="encrypted-media; picture-in-picture"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen></iframe>
-  </div>
-
-  <div style="background: white; padding: 15px; margin: 18px auto; border-radius: 16px; max-width: 500px;">
-    <h3>❤️ Tera Mera Hai Pyar Amar</h3>
-    <iframe width="100%" height="200"
-      src="https://www.youtube-nocookie.com/embed/qLSXgrBsXs0"
-      title="Tera Mera Hai Pyar Amar" frameborder="0"
-      allow="encrypted-media; picture-in-picture"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen></iframe>
-  </div>
-</section>
+    setInterval(createHeart, 1000);
+  </script>
 
 </body>
 </html>
