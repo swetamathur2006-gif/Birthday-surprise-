@@ -1,98 +1,124 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Surprise ❤️</title>
+<title>For My Love ❤️</title>
 <style>
 *{box-sizing:border-box}
 body{
- margin:0; min-height:100vh; display:grid; place-items:center;
- font-family:Georgia,serif; color:#713b50;
- background:linear-gradient(135deg,#fff0f5,#f9dce8,#fcefe5);
- text-align:center; overflow-x:hidden
+ margin:0;font-family:Georgia,serif;
+ background:linear-gradient(135deg,#fff0f5,#f8dce8,#fff7f0);
+ color:#71394f;text-align:center;min-height:100vh;
 }
-.card{width:90%;max-width:430px;padding:32px 22px;border-radius:28px;
- background:#ffffffd9;box-shadow:0 12px 40px #a75b7625}
-.heart{font-size:48px;animation:pulse 1.2s infinite}
-h1{font-size:34px;margin:16px 0}
-p{font-size:18px;line-height:1.7}
-button{border:0;border-radius:30px;padding:15px 23px;margin:8px;
- background:#d85e87;color:white;font-size:16px;cursor:pointer}
-button:active{transform:scale(.96)}
-.hidden{display:none}
-.small{font-size:14px;color:#a5687e}
-#confetti{position:fixed;inset:0;pointer-events:none;font-size:23px}
-.memory{font-size:42px;margin:15px}
-@keyframes pulse{50%{transform:scale(1.15)}}
-@keyframes rise{to{transform:translateY(-100vh) rotate(360deg);opacity:0}}
+.page{display:none;min-height:100vh;padding:35px 20px;
+ align-items:center;justify-content:center;flex-direction:column}
+.page.active{display:flex}
+.card{width:100%;max-width:560px;background:#ffffffc9;
+ border:1px solid #fff;border-radius:25px;padding:28px 22px;
+ box-shadow:0 10px 35px #b76e8b25}
+h1{font-size:clamp(32px,8vw,48px);color:#b34d75;margin:12px 0}
+h2{color:#b34d75}
+p{font-size:18px;line-height:1.8}
+.heart{font-size:60px;animation:pulse 1.5s infinite}
+button{background:#b34d75;color:white;border:0;border-radius:30px;
+ padding:14px 24px;font-size:16px;margin:12px 5px;cursor:pointer}
+button:hover{background:#8e3458}
+.poem{font-size:19px;line-height:2;font-style:italic;
+ white-space:pre-line;color:#93405f}
+.small{font-size:14px;color:#986d7e}
+.rose{font-size:27px;letter-spacing:8px}
 </style>
 </head>
 <body>
-<div id="confetti"></div>
-<main class="card">
- <section id="s1">
+
+<section class="page active" id="p1">
+ <div class="card">
+  <div class="rose">🌹 💗 🌹</div>
   <div class="heart">🎁</div>
-  <p>A tiny surprise has arrived for someone very special...</p>
-  <h1>It's for YOU!</h1>
-  <p class="small">Made with a little love and lots of feelings 💌</p>
-  <button onclick="show('s2')">Open Your Surprise ✨</button>
- </section>
+  <p>A little surprise made with all my heart...</p>
+  <h1>For MY LOVE</h1>
+  <p>Your special day deserves something special.</p>
+  <button onclick="showPage('p2')">Open Your Surprise 💌</button>
+ </div>
+</section>
 
- <section id="s2" class="hidden">
-  <div class="heart">🥹</div>
-  <h1>Wait a second...</h1>
-  <p>Before you continue, there's one important question.</p>
-  <p>Will you accept my birthday wishes? 💗</p>
-  <button onclick="celebrate()">ACCEPT MY WISHES ❤️</button>
- </section>
-
- <section id="s3" class="hidden">
+<section class="page" id="p2">
+ <div class="card">
   <div class="heart">🎂</div>
-  <h1>HAPPY BIRTHDAY!</h1>
-  <p>To someone who makes this world a little more beautiful just by being in it. ❤️</p>
-  <div class="memory">🎈 💌 🎁</div>
-  <button onclick="show('s4')">There's More... 👀</button>
- </section>
+  <p>To the most special person in my life...</p>
+  <h1>Happiest Birthday!</h1>
+  <p>Are you ready for a little message from my heart?</p>
+  <button onclick="showPage('p3')">Read My Letter ❤️</button>
+ </div>
+</section>
 
- <section id="s4" class="hidden">
-  <div class="heart">💌</div>
-  <h1>A little message</h1>
-  <p>Today, I wish you endless happiness, beautiful memories, peaceful days, and all the little things that make your heart smile.</p>
-  <p>May this new year of your life be as wonderful as you are. 🌙</p>
-  <button onclick="show('s5')">One Last Surprise 🎁</button>
- </section>
+<section class="page" id="p3">
+ <div class="card">
+  <div class="rose">🌷 💗 🌷</div>
+  <h1>Happy Birthday, My Love</h1>
+  <p>
+   Happiest birthday, my love of my life! ❤️<br>
+   You are too special to me. I am really grateful that I have you.
+   I don't want to lose you at any cost.<br>
+   You are my everything, meri jaan. 🥹
+  </p>
+  <p>
+   You are so special to me. I really pray to God that you get
+   everything you wish for, in every second and every moment of your life.
+  </p>
+  <p>
+   Maine aapke jaisa kabhi koi dekha nahi...<br>
+   Shayad koi hai bhi nahi. ❤️
+  </p>
+  <p>
+   I really appreciate you, my hardworking man.
+   I am genuinely so happy with you. I hope life gives you all the
+   happiness, peace and success you deserve.
+  </p>
+  <button onclick="showPage('p4')">A Few Lines For You 🌙</button>
+ </div>
+</section>
 
- <section id="s5" class="hidden">
+<section class="page" id="p4">
+ <div class="card">
+  <div class="rose">🌹 ✨ 🌹</div>
+  <h1>Mere Pasandida Insaan</h1>
+  <div class="poem">Aap guzron toh hawaon mein asar rehta hai
+Aapke hone se dil ko sabr rehta hai
+yun to dekhe hai zamaane mein haseen chehre
+magar aap jaisa kahan koi dil ke qareeb rehta hai ...</div>
+  <p>Some feelings are too beautiful to be explained. ❤️</p>
+  <button onclick="showPage('p5')">One Last Thing 💖</button>
+ </div>
+</section>
+
+<section class="page" id="p5">
+ <div class="card">
   <div class="heart">❤️</div>
-  <h1>One last thing...</h1>
-  <p>I'm really glad that you exist. I hope today reminds you how special you are.</p>
-  <p>Happy Birthday, once again! 🥹💕</p>
-  <div class="memory">🌷✨🌷</div>
-  <button onclick="show('s1')">Replay Surprise ↻</button>
- </section>
-</main>
+  <h1>My Favourite Person</h1>
+  <p>
+   No matter how many birthdays come and go, I will always pray
+   for your happiness, your dreams and your beautiful future.
+  </p>
+  <p>
+   Thank you for being you. Keep working hard, keep smiling,
+   and never forget how special you are to me.
+  </p>
+  <h2>Happy Birthday, MY LOVE! 🎂</h2>
+  <div class="rose">💗 🌹 💗</div>
+  <p class="small">Made with love, just for you.</p>
+  <button onclick="showPage('p1')">See It Again ↻</button>
+ </div>
+</section>
+
 <script>
-function show(id){
- document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));
- document.getElementById(id).classList.remove('hidden');
+function showPage(id){
+ document.querySelectorAll('.page').forEach(function(page){
+  page.classList.remove('active');
+ });
+ document.getElementById(id).classList.add('active');
  window.scrollTo(0,0);
-}
-function celebrate(){
- show('s3');
- const box=document.getElementById('confetti');
- const symbols=['💗','💕','✨','🎉','🎊','❤️'];
- for(let i=0;i<45;i++){
-  const e=document.createElement('span');
-  e.textContent=symbols[Math.floor(Math.random()*symbols.length)];
-  e.style.position='absolute';
-  e.style.left=Math.random()*100+'%';
-  e.style.bottom='-30px';
-  e.style.animation='rise '+(2+Math.random()*3)+'s linear forwards';
-  box.appendChild(e);
-  setTimeout(()=>e.remove(),5200);
- }
 }
 </script>
 </body>
