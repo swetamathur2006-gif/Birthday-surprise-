@@ -3,555 +3,355 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Love 💌</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For My Love ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --paper: #f8edda;
-  --ink: #633c35;
-  --rose: #ad6575;
-  --deep: #783f50;
-  --cream: #fff8ed;
+*{box-sizing:border-box}
+:root{
+ --pink:#f6dce2;--rose:#b66c80;--wine:#793e51;
+ --cream:#fff7ed;--brown:#65443c;--gold:#c5a16b;
 }
+body{
+ margin:0;min-height:100vh;color:var(--brown);
+ font-family:'Cormorant Garamond',serif;
+ background:
+ radial-gradient(ellipse at 10% 20%,#fff8f0 0%,transparent 35%),
+ radial-gradient(ellipse at 90% 80%,#edc6d2 0%,transparent 40%),
+ linear-gradient(135deg,#f8e8e8,#f3dce0,#f9ecdf);
+ overflow-x:hidden;
+}
+button{font-family:inherit}
+.sticker{
+ position:fixed;z-index:10;pointer-events:none;
+ font-size:25px;filter:drop-shadow(0 3px 4px #9c526322);
+ animation:float 4s ease-in-out infinite;
+}
+.s1{top:9%;left:12px}.s2{top:19%;right:13px;animation-delay:.7s}
+.s3{bottom:15%;left:12px;animation-delay:1s}
+.s4{bottom:9%;right:12px;animation-delay:1.5s}
+.s5{top:48%;left:8px;font-size:18px}
+.s6{top:55%;right:8px;font-size:18px}
+@keyframes float{50%{transform:translateY(-9px) rotate(6deg)}}
 
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  color: var(--ink);
-  font-family: 'Cormorant Garamond', serif;
-  background:
-    radial-gradient(ellipse at top, #f8e5dc, transparent 65%),
-    linear-gradient(135deg, #e8c8c0, #f8e8d7, #ead3bc);
-  min-height: 100vh;
-  overflow-x: hidden;
+.slide{
+ display:none;min-height:100vh;width:100%;
+ padding:35px 23px 30px;
+ flex-direction:column;align-items:center;justify-content:center;
+ position:relative;
 }
-
-button { font-family: inherit; }
-
-.decor {
-  position: fixed;
-  z-index: 5;
-  font-size: 24px;
-  opacity: .78;
-  pointer-events: none;
-  filter: drop-shadow(0 2px 3px #8d655333);
-  animation: floaty 4s ease-in-out infinite;
+.slide.active{display:flex;animation:fade .65s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h1,h2{font-family:'Dancing Script',cursive;color:var(--wine);font-weight:600}
+h1{font-size:clamp(43px,9vw,76px);margin:12px 0}
+h2{font-size:clamp(35px,7vw,52px);margin:10px 0}
+h3{font-family:'Playfair Display',serif;font-weight:400}
+p{font-size:19px;line-height:1.7}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;color:#a47778}
+.center{text-align:center}
+.subtitle{font-family:'Dancing Script',cursive;font-size:27px;margin:8px 0 22px}
+.btn{
+ cursor:pointer;border:1px solid #c9959e;background:#fff6f0;
+ color:#804657;border-radius:28px;padding:12px 22px;
+ margin:6px;font-size:16px;box-shadow:0 5px 13px #7e445016;
+ transition:.2s;
 }
-.d1 { left: 9px; top: 12%; }
-.d2 { right: 10px; top: 20%; animation-delay: 1s; }
-.d3 { left: 13px; bottom: 17%; animation-delay: 2s; }
-.d4 { right: 12px; bottom: 12%; animation-delay: .6s; }
-.d5 { right: 7%; top: 5%; font-size: 18px; }
-.d6 { left: 7%; bottom: 5%; font-size: 18px; }
-
-@keyframes floaty {
-  0%,100% { transform: translateY(0) rotate(-5deg); }
-  50% { transform: translateY(-8px) rotate(5deg); }
+.btn:hover{transform:translateY(-2px);background:#f5dfe2}
+.cover{max-width:700px;width:100%;text-align:center;padding:20px 8px}
+.cover-art{font-size:48px;margin:12px}
+.cover-box{
+ max-width:470px;margin:22px auto;padding:26px 22px;
+ border:1px solid #d9b6a8;background:#fff6e8b8;
+ box-shadow:0 10px 35px #8a59641a;
 }
-
-.slide {
-  display: none;
-  min-height: 100vh;
-  padding: 28px 20px 36px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
+.tiny{font-size:15px;color:#a27c76}
+.letter{
+ width:min(740px,100%);position:relative;
+ padding:clamp(25px,5vw,44px);
+ background:
+ radial-gradient(ellipse at 0% 0%,#d7b88c30,transparent 45%),
+ radial-gradient(ellipse at 100% 100%,#c7a27825,transparent 40%),
+ repeating-linear-gradient(0deg,transparent,transparent 27px,#a77c5314 28px),
+ #f8edd9;
+ border:1px solid #d8bb91;
+ box-shadow:0 12px 32px #74504120,inset 0 0 22px #b68b5c18;
 }
-.slide.active { display: flex; animation: appear .7s ease; }
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+.letter:before{
+ content:"❧";position:absolute;top:5px;left:12px;
+ color:#b68e68;font-size:25px;
 }
-
-h1, h2, h3, p { overflow-wrap: anywhere; }
-
-h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(42px, 8vw, 72px);
-  font-weight: 600;
-  line-height: 1.15;
-  margin: 8px 0 16px;
-  color: #824c58;
+.letter:after{
+ content:"🖋️";position:absolute;right:13px;top:12px;
+ font-size:28px;transform:rotate(-18deg);
 }
-h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(34px, 6vw, 48px);
-  font-weight: 600;
-  color: #824c58;
-  margin: 0 0 16px;
+.hand{
+ font-family:'Dancing Script',cursive;
+ font-size:clamp(22px,4vw,29px);line-height:1.7;
 }
-h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0 0 10px;
+.hand p{font-family:inherit;font-size:inherit;line-height:1.7;margin:10px 0}
+.signature{text-align:right;font-family:'Dancing Script',cursive;font-size:29px;color:#8b4e5b;margin-top:20px}
+.photo-grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));
+ gap:19px;width:min(820px,100%);margin:22px auto;
 }
-p { line-height: 1.7; font-size: 19px; }
-
-.eyebrow {
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: #9d6c66;
+.photo{
+ background:#fff9f0;padding:10px 10px 14px;
+ box-shadow:0 7px 20px #67453b20;border:1px solid #e2c9b1;
+ transform:rotate(-1deg);
 }
-
-.intro {
-  text-align: center;
-  max-width: 680px;
-  width: 100%;
-  padding: 25px 10px;
+.photo:nth-child(even){transform:rotate(1.3deg)}
+.photo img{
+ width:100%;height:260px;display:block;object-fit:cover;
+ background:linear-gradient(135deg,#ead4d0,#f9eddd);
 }
-.intro .subtitle {
-  font-family: 'Dancing Script', cursive;
-  font-size: 27px;
-  margin: 5px 0 24px;
+.caption{text-align:center;font:24px 'Dancing Script',cursive;padding-top:9px}
+.photo-tip{text-align:center;font-size:13px;color:#a67b72}
+.song{
+ width:min(440px,100%);text-align:center;margin:15px auto;
+ padding:17px;background:#fff8efc9;border:1px dashed #c49a91;
 }
-
-.btn {
-  border: 1px solid #b7807e;
-  background: #fff6e9;
-  color: #794650;
-  border-radius: 30px;
-  padding: 12px 23px;
-  margin: 7px 4px;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px #7c4a4617;
-  transition: .2s;
+.song button{
+ background:#874b60;color:white;border:0;border-radius:25px;
+ padding:11px 19px;cursor:pointer;font-size:15px;
 }
-.btn:hover { background: #efd5d2; transform: translateY(-2px); }
-
-.paper {
-  width: min(760px, 100%);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #d6b78d;
-  border-radius: 4px;
-  padding: clamp(22px, 5vw, 46px);
-  background:
-    radial-gradient(ellipse at 10% 15%, #e8d0aa55, transparent 45%),
-    radial-gradient(ellipse at 95% 85%, #c69c6b22, transparent 40%),
-    repeating-linear-gradient(0deg, transparent 0px, #9c79500b 1px, transparent 2px, transparent 5px),
-    var(--paper);
-  box-shadow: 0 12px 35px #714d3924, inset 0 0 28px #b18a5520;
-}
-.paper:before {
-  content: "✦  ❧";
-  position: absolute;
-  top: 10px;
-  left: 14px;
-  color: #bd9570;
-  font-size: 20px;
-}
-.paper:after {
-  content: "❧  ✦";
-  position: absolute;
-  right: 14px;
-  bottom: 9px;
-  color: #bd9570;
-  font-size: 20px;
-}
-
-.letter-text {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(21px, 4vw, 28px);
-  line-height: 1.65;
-  white-space: normal;
-}
-.letter-text p { font-family: inherit; font-size: inherit; margin: 10px 0; }
-
-.signature {
-  text-align: right;
-  font-family: 'Dancing Script', cursive;
-  font-size: 29px;
-  color: #874c5a;
-  margin-top: 20px;
-}
-
-.photo-layout {
-  width: min(850px, 100%);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
-  gap: 18px;
-  align-items: start;
-  margin: 12px auto 20px;
-}
-.photo-frame {
-  background: #fff9ed;
-  padding: 10px 10px 15px;
-  border: 1px solid #d8bda1;
-  box-shadow: 0 8px 18px #68443a24;
-  transform: rotate(-1deg);
-}
-.photo-frame:nth-child(even) { transform: rotate(1.5deg); }
-.photo-frame img {
-  display: block;
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  background: #ead7c3;
-  border: 1px solid #e1c9ad;
-}
-.photo-caption {
-  text-align: center;
-  font-family: 'Dancing Script', cursive;
-  font-size: 23px;
-  padding-top: 9px;
-}
-.photo-note {
-  font-size: 14px;
-  text-align: center;
-  color: #956d61;
-  margin: 4px 0;
-}
-
-.song-card {
-  max-width: 440px;
-  width: 100%;
-  text-align: center;
-  border: 1px dashed #b88b7b;
-  background: #fff5e5d9;
-  padding: 17px;
-  margin: 20px auto 6px;
-  border-radius: 4px;
-}
-.song-card button {
-  background: #874e5c;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 11px 19px;
-  cursor: pointer;
-  font-size: 15px;
-}
-.song-player { margin-top: 14px; }
-.song-player iframe {
-  width: 100%;
-  height: 190px;
-  border: 0;
-  border-radius: 8px;
-}
-
-.shayari {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(24px, 4vw, 32px);
-  line-height: 1.65;
-  text-align: center;
-  color: #75434a;
-  margin: 20px 0;
-}
-.sticker-row {
-  display: flex;
-  justify-content: center;
-  gap: 13px;
-  font-size: 25px;
-  margin: 13px 0;
-}
-.nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 18px;
-}
-.page-count { font-size: 13px; color: #9b766b; margin-top: 10px; }
-.small-heart { color: #b75e75; }
-.center { text-align: center; }
-.wish-line { margin: 12px 0; }
-
-@media(max-width: 480px) {
-  .slide { padding: 22px 17px 30px; }
-  .photo-frame img { height: 230px; }
-  .paper { padding: 30px 22px; }
-  .decor { font-size: 20px; }
-  .song-player iframe { height: 170px; }
+.song-player{margin-top:12px}
+.song-player iframe{width:100%;height:190px;border:0;border-radius:9px}
+.nav{display:flex;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.count{font-size:13px;color:#a17c76;margin-top:9px}
+.shayari{font:clamp(24px,4vw,32px)/1.7 'Dancing Script',cursive;text-align:center;color:#794650;margin:20px 0}
+.memories-title{text-align:center}
+@media(max-width:480px){
+ .slide{padding:25px 20px}
+ .photo img{height:225px}
+ .letter{padding:32px 22px}
+ .song-player iframe{height:170px}
 }
 </style>
 </head>
 
 <body>
+<div class="sticker s1">🎀</div>
+<div class="sticker s2">🧸</div>
+<div class="sticker s3">💌</div>
+<div class="sticker s4">🏡</div>
+<div class="sticker s5">♡</div>
+<div class="sticker s6">🌷</div>
 
-<!-- Little decorative stickers around the page -->
-<div class="decor d1">🎀</div>
-<div class="decor d2">🧸</div>
-<div class="decor d3">💌</div>
-<div class="decor d4">🏡</div>
-<div class="decor d5">♡</div>
-<div class="decor d6">🌷</div>
-
-<!-- SLIDE 1: COVER -->
+<!-- PAGE 1 -->
 <section class="slide active" id="slide1">
-  <div class="intro">
-    <div class="sticker-row">🎁 💗 🧸</div>
-    <p class="eyebrow">a little surprise made with love</p>
-    <h1>For MY LOVE ❤️</h1>
-    <p class="subtitle">A tiny corner of the world, made just for you...</p>
-    <div class="paper">
-      <div class="letter-text center">
-        <p>To the person who makes ordinary moments feel special,</p>
-        <p>I've kept a few words, memories and songs here — just for you.</p>
-        <p>Open this little letter slowly. Every page has a piece of my heart. 💌</p>
-      </div>
-    </div>
-    <button class="btn" onclick="nextSlide(2)">Open your surprise ♡</button>
-    <div class="page-count">A little love letter · 1 of 6</div>
+ <div class="cover">
+  <div class="cover-art">🎁 💗 🎀</div>
+  <p class="eyebrow">a little surprise made just for you</p>
+  <h1>For MY LOVE ❤️</h1>
+  <p class="subtitle">A little world of love, memories & wishes...</p>
+  <div class="cover-box">
+   <div style="font-size:35px">💌</div>
+   <p style="font-family:'Dancing Script',cursive;font-size:26px">
+    Some feelings are too special for an ordinary message...
+   </p>
+   <p class="tiny">So I made you this little surprise ♡</p>
   </div>
+  <button class="btn" onclick="nextSlide(2)">Open your gift 🎁</button>
+  <p class="tiny">Made with love, just for you</p>
+  <div class="count">♡ 1 / 6 ♡</div>
+ </div>
 </section>
 
-<!-- SLIDE 2: BIRTHDAY + HIS PHOTO -->
+<!-- PAGE 2 -->
 <section class="slide" id="slide2">
-  <div class="paper">
-    <div class="center">
-      <div class="sticker-row">🎂 🎁 💗</div>
-      <p class="eyebrow">today is all about you</p>
-      <h1>Happiest Birthday!</h1>
-      <h2>My Love ❤️</h2>
-      <p class="letter-text center">
-        Happiest birthday to the most special person in my world.
-        I am so grateful that I have you in my life.
-        Aap mere liye bahut special ho, aur main dil se chahti hoon
-        ki aapki zindagi khushiyon se bhari rahe.
-      </p>
-      <p class="letter-text center">Your birthday is my second birthday. 🎂❤️</p>
-    </div>
+ <p class="eyebrow">today is your special day</p>
+ <h1 class="center">Happiest Birthday!</h1>
+ <h2 class="center">My Love ❤️</h2>
+ <p class="center" style="max-width:600px">
+  Happiest birthday to the person who means so much to me.
+  I am truly grateful that I have you in my life. 🥹❤️
+ </p>
+ <div class="photo-grid">
+  <div class="photo">
+   <img src="photos/his1.jpg" alt="Birthday photo">
+   <div class="caption">My favourite person ♡</div>
+   <div class="photo-tip">Your photo goes here</div>
   </div>
-
-  <div class="photo-layout">
-    <div class="photo-frame">
-      <img src="photos/his1.jpg" alt="Your birthday boy"
-           onerror="this.style.objectFit='contain'; this.alt='Add your photo as photos/his1.jpg';">
-      <div class="photo-caption">My favourite person ♡</div>
-      <div class="photo-note">Replace with your real photo</div>
-    </div>
-  </div>
-
-  <div class="song-card">
-    <h3>🎶 Happy bday to u ji ❤️</h3>
-    <p>A little birthday song, just for you.</p>
-    <button onclick="playSong('x_8eFWMB3ak', this, 15, 40)">🎶 Tap to Listen</button>
-    <div class="song-player"></div>
-  </div>
-  <div class="nav">
-    <button class="btn" onclick="nextSlide(1)">← Back</button>
-    <button class="btn" onclick="nextSlide(3)">Next page ♡</button>
-  </div>
-  <div class="page-count">2 of 6</div>
+ </div>
+ <div class="cover-box center" style="margin-top:4px">
+  <div style="font-size:30px">🎂 🎁 💗</div>
+  <p style="font-family:'Dancing Script',cursive;font-size:27px">
+   Your birthday is my second birthday.
+  </p>
+ </div>
+ <div class="song">
+  <h3>🎶 Happy bday to u ji ❤️</h3>
+  <button onclick="playSong('x_8eFWMB3ak',this,15,40)">🎶 Tap to Listen</button>
+  <div class="song-player"></div>
+ </div>
+ <div class="nav">
+  <button class="btn" onclick="nextSlide(1)">← Back</button>
+  <button class="btn" onclick="nextSlide(3)">Your wishes ♡</button>
+ </div>
+ <div class="count">♡ 2 / 6 ♡</div>
 </section>
 
-<!-- SLIDE 3: WISHES -->
+<!-- PAGE 3 -->
 <section class="slide" id="slide3">
-  <div class="paper">
-    <p class="eyebrow center">a few wishes from my heart</p>
-    <h2 class="center">For your beautiful life 💌</h2>
-    <div class="letter-text">
-      <p>My Love,</p>
-      <p class="wish-line">Main really grateful hoon ki aap meri life mein ho. ❤️</p>
-      <p class="wish-line">I pray to God ki aapko jo bhi chahiye, woh aapko mile — har ek khushi, har ek success aur har woh moment jiska aapne kabhi sapna dekha hai.</p>
-      <p class="wish-line">Aap hamesha khush raho, healthy raho aur apne dreams achieve karo. Jab bhi life difficult lage, I hope you always find a reason to smile.</p>
-      <p class="wish-line">Main aapke liye dil se dua karti hoon. Aapki khushi mere liye bahut matter karti hai. 🌷</p>
-      <p class="wish-line">Aap mere liye bahut special ho — more than these little words can explain.</p>
-    </div>
-    <div class="signature">With all my love, ❤️</div>
+ <div class="letter">
+  <p class="eyebrow">a little wish from my heart</p>
+  <h2>For You, My Love...</h2>
+  <div class="hand">
+   <p>I really pray to God ki aapko jo chahiye, woh mile. Har ek dream poora ho, har ek din aapke liye kuch achha lekar aaye. ❤️</p>
+   <p>Aap hamesha khush raho, healthy raho aur life mein bahut aage jao. Aapko woh saari success mile jiske liye aap mehnat karte ho.</p>
+   <p>I hope aapki life mein itni khushiyan aayein ki aapko kabhi apni worth par doubt na ho.</p>
+   <p>Aap mere liye bahut special ho, aur main dil se chahti hoon ki aapka har birthday pichhle se bhi zyada beautiful ho. 🌷</p>
   </div>
-
-  <div class="photo-layout">
-    <div class="photo-frame">
-      <img src="photos/his2.jpg" alt="A special picture"
-           onerror="this.style.objectFit='contain'; this.alt='Add your photo as photos/his2.jpg';">
-      <div class="photo-caption">A face I adore ♡</div>
-    </div>
+  <div class="signature">Always wishing the best for you ❤️</div>
+ </div>
+ <div class="photo-grid">
+  <div class="photo">
+   <img src="photos/his2.jpg" alt="A special picture">
+   <div class="caption">A smile I adore ♡</div>
   </div>
-
-  <div class="song-card">
-    <h3>🎶 Nazm Nazm</h3>
-    <p>This little song reminds me of you.</p>
-    <button onclick="playSong('vyJTAnlRHVc', this, 156, 217)">🎶 Tap to Listen</button>
-    <div class="song-player"></div>
-  </div>
-  <div class="nav">
-    <button class="btn" onclick="nextSlide(2)">← Back</button>
-    <button class="btn" onclick="nextSlide(4)">Next page ♡</button>
-  </div>
-  <div class="page-count">3 of 6</div>
+ </div>
+ <div class="song">
+  <h3>🎶 Nazm Nazm</h3>
+  <button onclick="playSong('vyJTAnlRHVc',this,156,217)">🎶 Tap to Listen</button>
+  <div class="song-player"></div>
+ </div>
+ <div class="nav">
+  <button class="btn" onclick="nextSlide(2)">← Back</button>
+  <button class="btn" onclick="nextSlide(4)">A letter for you 💌</button>
+ </div>
+ <div class="count">♡ 3 / 6 ♡</div>
 </section>
 
-<!-- SLIDE 4: PERSONAL LETTER -->
+<!-- PAGE 4 -->
 <section class="slide" id="slide4">
-  <div class="paper">
-    <div class="center">
-      <div class="sticker-row">🖋️ 💌 🌷</div>
-      <p class="eyebrow">written with love, just for you</p>
-      <h2>Dear MY LOVE,</h2>
-    </div>
-    <div class="letter-text">
-      <p>Kabhi kabhi lagta hai ki kuch log life mein aise aate hain jo bahut si cheezon ko special bana dete hain. Aap mere liye unhi logon mein se ho. ❤️</p>
-      <p>I don't always know how to put my feelings into perfect words, but I hope you know how much you mean to me.</p>
-      <p>Main aapko success hoke zaroor dikhaungi, kabhi niraash nahi karungi aapko. ❤️</p>
-      <p>Aap mere liye sirf ek special person nahi ho, aap woh insaan ho jinke liye main dil se dua karti hoon. I really hope life gives you the happiness you deserve.</p>
-      <p>My Nitya Didi 🤭❤️ — ye chhoti si website bhi meri taraf se ek little surprise hai. I hope jab bhi aap ise dekho, aapke face par smile aa jaaye.</p>
-      <p>Thank you for being you. I hope your coming year brings you peace, love, success and countless reasons to smile.</p>
-    </div>
-    <div class="signature">Yours, Shivi ❤️</div>
+ <div class="letter">
+  <p class="eyebrow">written with love</p>
+  <h2>Dear MY LOVE,</h2>
+  <div class="hand">
+   <p>Kabhi kabhi samajh nahi aata ki apni feelings ko words mein kaise likhun. Bas itna jaanti hoon ki aap meri life mein bahut special jagah rakhte ho. ❤️</p>
+   <p>Main aapko success hoke zaroor dikhaungi, kabhi niraash nahi karungi aapko. ❤️</p>
+   <p>My Nitya Didi 🤭❤️</p>
+   <p>I hope jab bhi aap is little surprise ko dekho, aapke face par ek pyari si smile aa jaaye. Ye chhoti si website mere thoughts, wishes aur aapke liye rakhe kuch special moments ka collection hai.</p>
+   <p>May God always guide you, protect your happiness and help you achieve everything you dream of.</p>
+   <p>Thank you for being you. Aapka ye special day bahut saari beautiful memories lekar aaye. 🌷</p>
   </div>
-
-  <div class="photo-layout">
-    <div class="photo-frame">
-      <img src="photos/his3.jpg" alt="Another special picture"
-           onerror="this.style.objectFit='contain'; this.alt='Add your photo as photos/his3.jpg';">
-      <div class="photo-caption">A little piece of my heart ♡</div>
-    </div>
+  <div class="signature">With love, your Shivi ❤️</div>
+ </div>
+ <div class="photo-grid">
+  <div class="photo">
+   <img src="photos/his3.jpg" alt="Another special picture">
+   <div class="caption">A little piece of my heart ♡</div>
   </div>
-
-  <div class="song-card">
-    <h3>🎶 Tum Mile</h3>
-    <p>A song for a special person.</p>
-    <button onclick="playSong('C0S0PMpNybM', this, 68, 100)">🎶 Tap to Listen</button>
-    <div class="song-player"></div>
-  </div>
-  <div class="nav">
-    <button class="btn" onclick="nextSlide(3)">← Back</button>
-    <button class="btn" onclick="nextSlide(5)">Our memories ♡</button>
-  </div>
-  <div class="page-count">4 of 6</div>
+ </div>
+ <div class="song">
+  <h3>🎶 Tum Mile</h3>
+  <button onclick="playSong('C0S0PMpNybM',this,68,100)">🎶 Tap to Listen</button>
+  <div class="song-player"></div>
+ </div>
+ <div class="nav">
+  <button class="btn" onclick="nextSlide(3)">← Back</button>
+  <button class="btn" onclick="nextSlide(5)">Our memories 📸</button>
+ </div>
+ <div class="count">♡ 4 / 6 ♡</div>
 </section>
 
-<!-- SLIDE 5: COUPLE PHOTOS -->
+<!-- PAGE 5 -->
 <section class="slide" id="slide5">
-  <div class="center">
-    <p class="eyebrow">little moments, lovely memories</p>
-    <h1>Our little corner ♡</h1>
-    <p class="letter-text">Some memories deserve their own little frames. 💗</p>
+ <div class="memories-title">
+  <p class="eyebrow">little moments, special memories</p>
+  <h1>Our Memories ♡</h1>
+  <p class="subtitle">A little gallery of us 💗</p>
+ </div>
+ <div class="photo-grid">
+  <div class="photo">
+   <img src="photos/us1.jpg" alt="Our photo one">
+   <div class="caption">You & me ♡</div>
   </div>
-
-  <div class="photo-layout">
-    <div class="photo-frame">
-      <img src="photos/us1.jpg" alt="Our memory one"
-           onerror="this.style.objectFit='contain'; this.alt='Add your photo as photos/us1.jpg';">
-      <div class="photo-caption">This moment ♡</div>
-    </div>
-    <div class="photo-frame">
-      <img src="photos/us2.jpg" alt="Our memory two"
-           onerror="this.style.objectFit='contain'; this.alt='Add your photo as photos/us2.jpg';">
-      <div class="photo-caption">You & me 💗</div>
-    </div>
-    <div class="photo-frame">
-      <img src="photos/us3.jpg" alt="Our memory three"
-           onerror="this.style.objectFit='contain'; this.alt='Add your photo as photos/us3.jpg';">
-      <div class="photo-caption">A favourite memory</div>
-    </div>
-    <div class="photo-frame">
-      <img src="photos/us4.jpg" alt="Our memory four"
-           onerror="this.style.objectFit='contain'; this.alt='Add your photo as photos/us4.jpg';">
-      <div class="photo-caption">Always a little special ♡</div>
-    </div>
+  <div class="photo">
+   <img src="photos/us2.jpg" alt="Our photo two">
+   <div class="caption">A favourite memory</div>
   </div>
-
-  <div class="song-card">
-    <h3>🎶 Tera Mera Hai Pyaar Amar</h3>
-    <p>...yup alwayss ❤️</p>
-    <button onclick="playSong('kM-IAHbLDnc', this, 75, 103)">🎶 Tap to Listen</button>
-    <div class="song-player"></div>
+  <div class="photo">
+   <img src="photos/us3.jpg" alt="Our photo three">
+   <div class="caption">My happy place 💗</div>
   </div>
-
-  <div class="nav">
-    <button class="btn" onclick="nextSlide(4)">← Back</button>
-    <button class="btn" onclick="nextSlide(6)">One last letter 💌</button>
+  <div class="photo">
+   <img src="photos/us4.jpg" alt="Our photo four">
+   <div class="caption">Always special ♡</div>
   </div>
-  <div class="page-count">5 of 6</div>
+ </div>
+ <div class="song">
+  <h3>🎶 Tera Mera Hai Pyaar Amar</h3>
+  <p>...yup alwayss ❤️</p>
+  <button onclick="playSong('kM-IAHbLDnc',this,75,103)">🎶 Tap to Listen</button>
+  <div class="song-player"></div>
+ </div>
+ <div class="nav">
+  <button class="btn" onclick="nextSlide(4)">← Back</button>
+  <button class="btn" onclick="nextSlide(6)">One last thing 💌</button>
+ </div>
+ <div class="count">♡ 5 / 6 ♡</div>
 </section>
 
-<!-- SLIDE 6: FINAL LETTER -->
+<!-- PAGE 6 -->
 <section class="slide" id="slide6">
-  <div class="paper">
-    <div class="center">
-      <div class="sticker-row">💗 🧸 🏡 🎀</div>
-      <p class="eyebrow">one last thing, my love</p>
-      <h1>Just for you...</h1>
-    </div>
-
-    <div class="letter-text center">
-      <p>Thank you for being such a special part of my world. I hope this birthday brings you beautiful memories and a year full of good things. ❤️</p>
-      <p>I hope you always keep that smile, keep believing in yourself and keep moving towards everything you dream of.</p>
-      <p>May God bless you with happiness, peace, love and success — today and every day. 🌷</p>
-    </div>
-
-    <div class="shayari">
-      Aap guzron toh hawaon mein asar rehta hai<br>
-      Aapke hone se dil ko sabr rehta hai<br>
-      Yun to dekhe hain zamaane mein haseen chehre<br>
-      Magar aap jaisa kahan koi dil ke qareeb rehta hai ...
-    </div>
-
-    <div class="center letter-text">
-      <p>Happiest Birthday, MY LOVE. ❤️</p>
-      <p>May this new year of your life be as special as you are.</p>
-    </div>
-    <div class="signature">From your Shivi ❤️</div>
-    <div class="sticker-row">💌 🌷 🎁 💗</div>
+ <div class="letter">
+  <p class="eyebrow">one last note for you</p>
+  <h1 class="center">My Favourite Person ❤️</h1>
+  <div class="hand center">
+   <p>I hope this birthday brings you endless reasons to smile, beautiful memories and all the happiness your heart wishes for.</p>
+   <p>I hope you always believe in yourself and never stop working towards your dreams. You deserve good things, today and always. 🌷</p>
   </div>
-
-  <div class="nav">
-    <button class="btn" onclick="nextSlide(5)">← Back</button>
-    <button class="btn" onclick="nextSlide(1)">Read again ♡</button>
+  <div class="shayari">
+   Aap guzron toh hawaon mein asar rehta hai<br>
+   Aapke hone se dil ko sabr rehta hai<br>
+   Yun to dekhe hain zamaane mein haseen chehre<br>
+   Magar aap jaisa kahan koi dil ke qareeb rehta hai ...
   </div>
-  <div class="page-count">Made with love · 6 of 6</div>
+  <div class="hand center">
+   <p>Happiest Birthday, MY LOVE. ❤️</p>
+   <p>May God bless you with love, peace, success and a beautiful year ahead.</p>
+  </div>
+  <div class="signature">From your Shivi ❤️</div>
+  <div style="text-align:center;font-size:28px;margin-top:10px">💌 🎀 🧸 🎁</div>
+ </div>
+ <div class="nav">
+  <button class="btn" onclick="nextSlide(5)">← Back</button>
+  <button class="btn" onclick="nextSlide(1)">Read again ♡</button>
+ </div>
+ <div class="count">♡ 6 / 6 ♡</div>
 </section>
 
 <script>
-function stopSongs() {
-  document.querySelectorAll('.song-player').forEach(player => {
-    player.innerHTML = '';
-  });
-
-  document.querySelectorAll('.song-card button').forEach(button => {
-    button.textContent = '🎶 Tap to Listen';
-  });
+function stopSongs(){
+ document.querySelectorAll('.song-player').forEach(p=>p.innerHTML='');
+ document.querySelectorAll('.song button').forEach(b=>b.textContent='🎶 Tap to Listen');
 }
-
-function nextSlide(number) {
-  stopSongs();
-
-  document.querySelectorAll('.slide').forEach(slide => {
-    slide.classList.remove('active');
-  });
-
-  document.getElementById('slide' + number).classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function nextSlide(n){
+ stopSongs();
+ document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));
+ document.getElementById('slide'+n).classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
 }
-
-function playSong(videoId, button, start, end) {
-  const player = button.parentElement.querySelector('.song-player');
-
-  if (player.innerHTML !== '') {
-    player.innerHTML = '';
-    button.textContent = '🎶 Tap to Listen';
-    return;
-  }
-
-  stopSongs();
-  button.textContent = '⏸ Close Song';
-
-  player.innerHTML = `
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/${videoId}?start=${start}&end=${end}&autoplay=1&rel=0"
-      title="Birthday song clip"
-      allow="autoplay; encrypted-media; picture-in-picture"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>
-    <p style="font-size:14px; margin-bottom:0">
-      Enjoy this little song moment ❤️
-    </p>
-  `;
+function playSong(id,button,start,end){
+ const player=button.parentElement.querySelector('.song-player');
+ if(player.innerHTML){
+  player.innerHTML='';
+  button.textContent='🎶 Tap to Listen';
+  return;
+ }
+ stopSongs();
+ button.textContent='⏸ Close Song';
+ player.innerHTML=`
+ <iframe
+ src="https://www.youtube-nocookie.com/embed/${id}?start=${start}&end=${end}&autoplay=1&rel=0"
+ title="Birthday song"
+ allow="autoplay; encrypted-media; picture-in-picture"
+ referrerpolicy="strict-origin-when-cross-origin"
+ allowfullscreen></iframe>
+ <p style="font-size:14px">A little song for you ❤️</p>`;
 }
 </script>
-
 </body>
 </html>
