@@ -1,1 +1,99 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0; min-height:100vh; display:grid; place-items:center;
+ font-family:Georgia,serif; color:#713b50;
+ background:linear-gradient(135deg,#fff0f5,#f9dce8,#fcefe5);
+ text-align:center; overflow-x:hidden
+}
+.card{width:90%;max-width:430px;padding:32px 22px;border-radius:28px;
+ background:#ffffffd9;box-shadow:0 12px 40px #a75b7625}
+.heart{font-size:48px;animation:pulse 1.2s infinite}
+h1{font-size:34px;margin:16px 0}
+p{font-size:18px;line-height:1.7}
+button{border:0;border-radius:30px;padding:15px 23px;margin:8px;
+ background:#d85e87;color:white;font-size:16px;cursor:pointer}
+button:active{transform:scale(.96)}
+.hidden{display:none}
+.small{font-size:14px;color:#a5687e}
+#confetti{position:fixed;inset:0;pointer-events:none;font-size:23px}
+.memory{font-size:42px;margin:15px}
+@keyframes pulse{50%{transform:scale(1.15)}}
+@keyframes rise{to{transform:translateY(-100vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<div id="confetti"></div>
+<main class="card">
+ <section id="s1">
+  <div class="heart">🎁</div>
+  <p>A tiny surprise has arrived for someone very special...</p>
+  <h1>It's for YOU!</h1>
+  <p class="small">Made with a little love and lots of feelings 💌</p>
+  <button onclick="show('s2')">Open Your Surprise ✨</button>
+ </section>
+
+ <section id="s2" class="hidden">
+  <div class="heart">🥹</div>
+  <h1>Wait a second...</h1>
+  <p>Before you continue, there's one important question.</p>
+  <p>Will you accept my birthday wishes? 💗</p>
+  <button onclick="celebrate()">ACCEPT MY WISHES ❤️</button>
+ </section>
+
+ <section id="s3" class="hidden">
+  <div class="heart">🎂</div>
+  <h1>HAPPY BIRTHDAY!</h1>
+  <p>To someone who makes this world a little more beautiful just by being in it. ❤️</p>
+  <div class="memory">🎈 💌 🎁</div>
+  <button onclick="show('s4')">There's More... 👀</button>
+ </section>
+
+ <section id="s4" class="hidden">
+  <div class="heart">💌</div>
+  <h1>A little message</h1>
+  <p>Today, I wish you endless happiness, beautiful memories, peaceful days, and all the little things that make your heart smile.</p>
+  <p>May this new year of your life be as wonderful as you are. 🌙</p>
+  <button onclick="show('s5')">One Last Surprise 🎁</button>
+ </section>
+
+ <section id="s5" class="hidden">
+  <div class="heart">❤️</div>
+  <h1>One last thing...</h1>
+  <p>I'm really glad that you exist. I hope today reminds you how special you are.</p>
+  <p>Happy Birthday, once again! 🥹💕</p>
+  <div class="memory">🌷✨🌷</div>
+  <button onclick="show('s1')">Replay Surprise ↻</button>
+ </section>
+</main>
+<script>
+function show(id){
+ document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+ window.scrollTo(0,0);
+}
+function celebrate(){
+ show('s3');
+ const box=document.getElementById('confetti');
+ const symbols=['💗','💕','✨','🎉','🎊','❤️'];
+ for(let i=0;i<45;i++){
+  const e=document.createElement('span');
+  e.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  e.style.position='absolute';
+  e.style.left=Math.random()*100+'%';
+  e.style.bottom='-30px';
+  e.style.animation='rise '+(2+Math.random()*3)+'s linear forwards';
+  box.appendChild(e);
+  setTimeout(()=>e.remove(),5200);
+ }
+}
+</script>
+</body>
+</html>
